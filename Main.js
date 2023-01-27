@@ -75,43 +75,43 @@ SoundJS.addBatch([
  
 bgImg.src = 'bg.png'; 
 bgImg.name = 'bg'; 
-bgImg.onload = loadGfx; 
+bgImg.onload = loadGfx(); 
  
 mainImg.src = 'main.png'; 
 mainImg.name = 'main'; 
-mainImg.onload = loadGfx; 
+mainImg.onload = loadGfx(); 
  
 startBImg.src = 'startB.png'; 
 startBImg.name = 'startB'; 
-startBImg.onload = loadGfx; 
+startBImg.onload = loadGfx(); 
  
 creditsBImg.src = 'creditsB.png'; 
 creditsBImg.name = 'creditsB'; 
-creditsBImg.onload = loadGfx; 
+creditsBImg.onload = loadGfx(); 
  
 creditsViewImg.src = 'credits.png'; 
 creditsViewImg.name = 'credits'; 
-creditsViewImg.onload = loadGfx; 
+creditsViewImg.onload = loadGfx(); 
  
 playerImg.src = 'paddle.png'; 
 playerImg.name = 'player'; 
-playerImg.onload = loadGfx; 
+playerImg.onload = loadGfx(); 
  
 ballImg.src = 'ball.png'; 
 ballImg.name = 'ball'; 
-ballImg.onload = loadGfx; 
+ballImg.onload = loadGfx(); 
  
 cpuImg.src = 'paddle.png'; 
 cpuImg.name = 'cpu'; 
-cpuImg.onload = loadGfx; 
+cpuImg.onload = loadGfx(); 
  
 winImg.src = 'win.png'; 
 winImg.name = 'win'; 
-winImg.onload = loadGfx; 
+winImg.onload = loadGfx(); 
  
 loseImg.src = 'lose.png'; 
 loseImg.name = 'lose'; 
-loseImg.onload = loadGfx;
+loseImg.onload = loadGfx();
 
 /* Ticker */ 
  
@@ -156,8 +156,8 @@ function addTitleView()
 	stage.update();
 
 	 
-	startB.onPress = addGameView; 
-	creditsB.onPress = showCredits; 
+	startB.onPress = addGameView(); 
+	creditsB.onPress = showCredits(); 
 }
 
 
@@ -170,7 +170,7 @@ function showCredits()
 	stage.addChild(credits); 
 	stage.update(); 
 	Tween.get(credits).to({x:0}, 300); 
-	credits.onPress = hideCredits; 
+	credits.onPress = hideCredits(); 
 }
 
 
@@ -179,7 +179,7 @@ function showCredits()
  
 function hideCredits(e) 
 { 
-	Tween.get(credits).to({x:480}, 300).call(rmvCredits); 
+	Tween.get(credits).to({x:480}, 300).call(rmvCredits()); 
 } 
  
 // Remove Credits 
